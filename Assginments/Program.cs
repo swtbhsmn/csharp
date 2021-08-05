@@ -20,7 +20,7 @@ namespace Assginments
                 "well", "what", "when", "where","who", "will", "with", "you", "your",
                 "@","#","$","%","&","*"
             };
-            Console.Write("Type 1: For Word Frequency Problem.\nType 2: For Calculate Date of Birth.\nEnter Your Choice: ");
+            Console.Write("Type 1: For Word Frequency Problem.\nType 2: For Calculate Date of Birth.\nType 3: For Remove Words From Text.\nEnter Your Choice: ");
             choice = Convert.ToInt32(Console.ReadLine());
             Console.Write("\n");
             switch (choice)
@@ -56,6 +56,11 @@ namespace Assginments
                     Console.ReadKey();
                     break;
                 case 3:
+                    Console.WriteLine("Enter text.");
+                    string inputText = Console.ReadLine();
+                    string[] resultArray = StopWordRemove.RemoveStopWord(inputText);
+                    Console.WriteLine(String.Join(' ', resultArray));
+
                     break;
                 default:
                     Console.WriteLine("Invalid Choice!");
