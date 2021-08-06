@@ -20,7 +20,9 @@ namespace Assginments
                 "well", "what", "when", "where","who", "will", "with", "you", "your",
                 "@","#","$","%","&","*"
             };
-            Console.Write("Type 1: For Word Frequency Problem.\nType 2: For Calculate Date of Birth.\nType 3: For Remove Words From Text.\nEnter Your Choice: ");
+            Console.Write("Type 1: For Word Frequency Problem.\nType 2: For Calculate Date of Birth." +
+                        "\nType 3: For Remove Words From Text.\nType 4: For Json to List" +
+                        "\nEnter Your Choice: ");
             choice = Convert.ToInt32(Console.ReadLine());
             Console.Write("\n");
             switch (choice)
@@ -61,6 +63,9 @@ namespace Assginments
                     string[] resultArray = StopWordRemove.RemoveStopWord(inputText);
                     Console.WriteLine(String.Join(' ', resultArray));
 
+                    break;
+                case 4:
+                    JsonToList.GetJsonFile("C:\\Datagrokr\\csharp\\Assginments\\Assginments\\Share\\data.json");
                     break;
                 default:
                     Console.WriteLine("Invalid Choice!");
