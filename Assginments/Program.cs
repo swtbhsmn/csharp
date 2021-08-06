@@ -45,6 +45,7 @@ namespace Assginments
                     Console.Write("\n");
                     Console.WriteLine($"No. of Repetitions of '{word}' word in a given sentence: { WordFrequency.CountWordRepetition(text, word)}");
                     Console.ReadKey();
+                    
                     break;
                 case 2:
                     Console.Write("Enter Year:");
