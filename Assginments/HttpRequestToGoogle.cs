@@ -20,8 +20,8 @@ namespace Assginments
                 string searchQuery;
                 Console.WriteLine("Enter search query.");
                 searchQuery = Console.ReadLine();
-                string apiKey = "AIzaSyCPC5XkV5MrRMmESqD635zyCaB0Mgu28Cg";
-                string cx = "098e3c6d57deb664c";
+                string apiKey = "******************";
+                string cx = "*******************";
 
                 WebRequest request = WebRequest.Create("https://www.googleapis.com/customsearch/v1?key=" + apiKey + "&cx=" + cx + "&q=" + searchQuery);
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
