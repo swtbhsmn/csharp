@@ -7,7 +7,7 @@ namespace Assginments
 {
     class JsonToList
     {
-        public class Employees
+        private class Employees
         {
             public string  name { get; set; }
             public int age{ get; set; }
@@ -15,7 +15,7 @@ namespace Assginments
  
         }
 
-        public static string GetJsonFile(string jsonFileLocation)
+        public static void GetJsonFile(string jsonFileLocation)
         {
             
             string jsonFilePath = $"{jsonFileLocation}";
@@ -24,12 +24,19 @@ namespace Assginments
 
             if (File.Exists(jsonFilePath))
             {
-                Console.WriteLine("File found.");
-                string json = File.ReadAllText(jsonFilePath);
-                var values = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
-                Console.WriteLine("Name:"+values["name"]);
-                Console.WriteLine("Age:"+values["age"]);
-                Console.WriteLine("Place:"+values["city"]);
+                try
+                {
+                    Console.WriteLine("File found.");
+                    string json = File.ReadAllText(jsonFilePath);
+                    var values = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+                    Console.WriteLine("Name:" + values["name"]);
+                    Console.WriteLine("Age:" + values["age"]);
+                    Console.WriteLine("Place:" + values["city"]);
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
 
 
             }
@@ -38,8 +45,6 @@ namespace Assginments
                 Console.WriteLine("File not found.");
             }
             
-
-            return "hello";
 
 
         }

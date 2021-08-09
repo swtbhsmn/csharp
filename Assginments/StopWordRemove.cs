@@ -1,12 +1,25 @@
 ﻿using System;
-using System.Linq;
-using System.Text;
+
 
 namespace Assginments
 {
     class StopWordRemove
     {
-        public static string[] RemoveStopWord(string sentence)
+        public static void StopWordRemoveCaller()
+        {
+            try
+            {
+                Console.WriteLine("Enter text.");
+                string inputText = Console.ReadLine();
+                string[] resultArray = RemoveStopWord(inputText);
+                Console.WriteLine(String.Join(' ', resultArray));
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+        private static string[] RemoveStopWord(string sentence)
         {
             string[] stopWordsArrary = new string[] {
 
@@ -20,20 +33,25 @@ namespace Assginments
                 "@","#","$","%","&","*","!",",","'","."
             };
 
-
-
             string[] cleanTextArray = sentence.Split(new char[] { ',', ';','.',' ' });
 
-            for(var i=0;i< cleanTextArray.Length;i++)
+            try
             {
-                for(var j = 0; j < stopWordsArrary.Length; j++)
+                for (var i = 0; i < cleanTextArray.Length; i++)
                 {
-                    if(cleanTextArray[i]== stopWordsArrary[j])
+                    for (var j = 0; j < stopWordsArrary.Length; j++)
                     {
-                        cleanTextArray[i] = "";
+                        if (cleanTextArray[i] == stopWordsArrary[j])
+                        {
+                            cleanTextArray[i] = "";
+                        }
                     }
-                }
 
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
 
             return cleanTextArray;
